@@ -1,4 +1,6 @@
 
+                                  LAB 19
+
 1.SELECT * FROM northwind.customers -  all the records from the customers table
 
 
@@ -8,7 +10,7 @@
 
 3.SELECT * FROM northwind.customers WHERE CustomerID like "BL%"; - gets all the records from the table customers where the customers id starts with BL.
 
-4.SELECT * FROM northwind.orders WHERE OrderId < "10349" ; first 100 orders
+4.SELECT * FROM northwind.orders limit 100 ; first 100 orders
 
 
 5.SELECT * FROM northwind.customers WHERE PostalCode = "1010" or PostalCode ="3012" or PostalCode ="12209" or PostalCode ="05023" - used this to find specific postal codes.
@@ -21,8 +23,9 @@
 
 
 9.  UPDATE northwind.orders SET ShipRegion='EuroZone' WHERE ShipCountry = 'France';
+- Changed the ship region to EuroZone if the country being shipped to is France.
 
-10. DELETE from northwind.`order details` where Quantity = '1';
+10. DELETE from northwind.`order details` where Quantity = 1;
 Deletes anything with the quantity of one
 
 
@@ -32,12 +35,16 @@ FROM northwind.`order details`;
 SELECT MIN(Quantity) AS SmallestQuantity
 FROM northwind.`order details`; 
 SELECT MAX(Quantity) AS LargestQuantity
-FROM northwind.`order details`;
+FROM northwind.`order details`; - calculates average min and max for quantity in order details.
 
+12. SELECT MIN(QUANTITY) as min , MAX(Quantity) as Max, AVG(quantity)
+From oder details group by ordered
 
 13.SELECT * FROM northwind.orders WHERE OrderId = "10290" ;
 
-14.
+14.   Select * from orders left join customers on customers.customerID =  orders.customersID -
+
+15. select first name from employees where reports to is null. - the person who reports to no one.
 
 16. SELECT FirstName FROM northwind.employees WHERE ReportsTo > 1; everyone who reports to Andrew
 
