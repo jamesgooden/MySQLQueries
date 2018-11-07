@@ -1,0 +1,43 @@
+
+1.SELECT * FROM northwind.customers -  all the records from the customers table
+
+
+2.SELECT DISTINCT Country FROM customers; - distinct countries from the customers table.
+
+
+
+3.SELECT * FROM northwind.customers WHERE CustomerID like "BL%"; - gets all the records from the table customers where the customers id starts with BL.
+
+4.SELECT * FROM northwind.orders WHERE OrderId < "10349" ; first 100 orders
+
+
+5.SELECT * FROM northwind.customers WHERE PostalCode = "1010" or PostalCode ="3012" or PostalCode ="12209" or PostalCode ="05023" - used this to find specific postal codes.
+
+6.SELECT * FROM northwind.orders WHERE ShipRegion != "NULL"; - used this to find all orders where the ship region is not null
+
+7.SELECT * FROM northwind.customers order by Country , City;
+
+8.INSERT INTO `northwind`.`customers` (`CustomerID`, `CompanyName`, `ContactName`, `ContactTitle`, `Address`, `City`, `Region`, `PostalCode`, `Country`, `Phone`) VALUES ('WHITA', 'Bellviso Academy', 'Charmaine Gooden', 'Owner', 'joy rd , 78', 'Detroit', 'OC', '48214', 'USA', '248-902-2000'); - added new customer to database
+
+
+9.  UPDATE northwind.orders SET ShipRegion='EuroZone' WHERE ShipCountry = 'France';
+
+10. DELETE from northwind.`order details` where Quantity = '1';
+Deletes anything with the quantity of one
+
+
+
+11.  SELECT AVG(Quantity) - Average , min and Max Quantity
+FROM northwind.`order details`; 
+SELECT MIN(Quantity) AS SmallestQuantity
+FROM northwind.`order details`; 
+SELECT MAX(Quantity) AS LargestQuantity
+FROM northwind.`order details`;
+
+
+13.SELECT * FROM northwind.orders WHERE OrderId = "10290" ;
+
+14.
+
+16. SELECT FirstName FROM northwind.employees WHERE ReportsTo > 1; everyone who reports to Andrew
+
